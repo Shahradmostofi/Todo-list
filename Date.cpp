@@ -7,15 +7,22 @@ Date :: Date (int y , int m , int d )
 }
 void Date :: setDay(int d)
 {
-    int days[12]={31,31,31,31,31,31,30,30,30,30,30,29};
-    if(Month<=6 && Month>=1)
-        for(int i=0 ; i<6 ; i++) 
-            if(d<=days[i] && d>0)
-                this ->Day = d;
-    else if(Month>6 && Month<12)
-        for(int i=6 ; i<=12 ; i++)
-            if(d<=days[i] && d>0)
-                this ->Day = d;
+    int days[]={0,31,31,31,31,31,31,30,30,30,30,30,29};
+    if (d<=days[Month] && d>1)
+        Day = d;
+    else
+    {
+        cout<<"your day is invalid , day=1 ";
+        Day = 1;
+    }
+    // if(Month<=6 && Month>=1)
+    //     for(int i=0 ; i<6 ; i++) 
+    //         if(d<=days[i] && d>0)
+    //             this ->Day = d;
+    // else if(Month>6 && Month<12)
+    //     for(int i=6 ; i<=12 ; i++)
+    //         if(d<=days[i] && d>0)
+    //             this ->Day = d;
 };
 void Date :: setMonth(int m)
 {
@@ -44,4 +51,15 @@ int Date :: getMonth() const
 int Date :: getYear() const
 {
     return Year;
+}
+ostream & operator << (ostream & out , const Date & d)
+{
+    out <<"Date is:"<<d.Year<<"/"<<d.Month<<"/"<<d.Day<<"\n";
+    return out;
+}
+bool Date :: operator > (const Date & d)
+{
+    if((Year > d.Year) || (Year == d.Year && Month>d.Month) || (Year == d.Year && Month==d.Month && Day>d.Day))
+        return true;
+    return false;
 }

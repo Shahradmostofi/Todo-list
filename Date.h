@@ -15,6 +15,8 @@ class Date
     int getDay()const;
     int getMonth()const;
     int getYear()const;
+    friend ostream & operator << (ostream & , const Date &);
+    bool operator > (const Date &);
 };
 
 #endif
