@@ -7,11 +7,11 @@ Date :: Date (int y , int m , int d )
 void Date :: setDay(int d)
 {
     int days[]={0,31,31,31,31,31,31,30,30,30,30,30,29};
-    if (d<=days[Month] && d>0)
-            Day = d;
+    if (d<=days[Month] && d>1)
+        Day = d;
     else
     {
-        cout<<"your day is invalid , day=1 \n";
+        cout<<"your day is invalid , day=1 ";
         Day = 1;
     }
     // if(Month<=6 && Month>=1)
