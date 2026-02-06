@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build TodoList",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "Todo-List.cpp",
+                "Date.cpp",
+                "-o",
+                "Todo-List.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
