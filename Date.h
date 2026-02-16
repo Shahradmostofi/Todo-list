@@ -9,9 +9,9 @@ class Date
         int Month;
         int Day;
     public:
-        
-        Date (int = 1400 , int = 1 , int = 1 );
-        void setDate(int = 1400, int=1 , int = 1 );
+
+        Date (int = 1404 , int = 1 , int = 1 );
+        void setDate(int , int, int );
         void setDay(int );
         void setMonth(int );
         void setYear(int );

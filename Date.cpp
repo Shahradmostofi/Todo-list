@@ -32,10 +32,10 @@ void Date :: setMonth(int m)
 };
 void Date :: setYear(int y)
 {
-    if(y>=1400 && y>0)
+    if(y>=1404 && y>0)
         this -> Year = y;
     else 
-        this -> Year = 1400;
+        this -> Year = 1404;
 };
 void Date :: setDate(int y, int m, int d)
 {
