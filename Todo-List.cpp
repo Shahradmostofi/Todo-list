@@ -25,7 +25,7 @@ class TodoList : public Task
         void sortbyDeadline();
         void printMenu();
         int getchoice();
-        bool SaveToFile(const string & filename ) const;
+        bool SaveToFile(string & filename ) const;
         bool LoadFromFile(const string & filename);
 };
 TodoList :: TodoList (string T  , string D , Status S , int A , Date C , Date dd , Date t , string a , string b , Status c , int d) : Task(T,D,S,A,C,dd,t)
@@ -38,12 +38,12 @@ TodoList :: TodoList (string T  , string D , Status S , int A , Date C , Date dd
 
 void TodoList :: NewTask(Task t)
 {
-
     tasks.push_back(t);
 }
+
 void TodoList :: DeleteTask(string s)
 {
-    for(int i=0 ; tasks.size() ; i++)
+    for(int i=0 ;i< tasks.size() ; i++)
     {
         if(tasks[i].GetTitle()== s)
         {
@@ -52,6 +52,7 @@ void TodoList :: DeleteTask(string s)
         }
     }
 }
+
 void TodoList :: toggletask(string s)
 {
     for (Task &t : tasks) 
@@ -63,6 +64,7 @@ void TodoList :: toggletask(string s)
         }
     }
 }
+
 void TodoList :: ShowAll()
 {
     for(Task t : tasks)
@@ -70,6 +72,7 @@ void TodoList :: ShowAll()
         t.Display();       
     }
 }
+
 void TodoList :: D_NTasks()
 {
     cout<<"Done tasks is:";
@@ -89,6 +92,7 @@ void TodoList :: D_NTasks()
         }
     }
 }
+
 void TodoList :: Showbackward()
 {
     int y,m,d;
@@ -177,8 +181,9 @@ int TodoList :: getchoice()
 }
 
 
-bool TodoList::SaveToFile(const string &filename) const
+bool TodoList::SaveToFile(string &filename) const
 {
+    filename = filename + ".txt";
     ofstream out(filename);
     if(!out) return false;
 
@@ -221,7 +226,7 @@ void runMenu(TodoList &T)
             cout<<"*** Add New Task ***\n";
             string title, desc;
             int ov;
-            Date c, d, t;
+            Date c, d;//
 
             cout << "Title: ";
             getline(cin, title);
