@@ -30,7 +30,7 @@ protected:
     string Description;
     Status status;
     Olaviat olaviat;
-
+    
     Date Createdate;
     Date Deadline;
     Date Today;

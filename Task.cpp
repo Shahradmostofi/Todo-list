@@ -53,7 +53,7 @@ void Task::Set_Olaviat(int a)
 string Task::GetTitle(){ return Title; }
 string Task::GetDescription(){ return Description; }
 Status Task::Get_Status(){ return status; }
-int Task::Get_Olaviat(){ return (int)olaviat; }
+int Task::Get_Olaviat(){ return (int)olaviat; } // چک شود
 Date Task::Get_Deadline(){ return Deadline; }
 
 void Task::ToggleStatus()
